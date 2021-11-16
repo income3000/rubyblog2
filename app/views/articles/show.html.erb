@@ -1,6 +1,8 @@
+<br/>
+<br/>
+<br/>
+<div class="container" style="border:1px solid black; border-radius:15px; background-color:yellow">
 
-
-<div class="container" style="border:1px solid black; width: fit-content">
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
@@ -10,6 +12,13 @@
   <strong>Text:</strong>
   <%= @article.text %>
 </p>
-<button><%= link_to 'Back', articles_path %><br/></button>
-<button><%= link_to 'Edit', edit_article_path(@article) %></button>
+<div class="container" style="border-bottom:1px solid grey border-radius:15px" >
+<%= render @article.comments %>
+ </div>
+ <div class="container" style="border: 1px solid grey">
+<h4>Add a comment:</h4>
+<%= render 'comments/forms' %>
+</div>
+<button class="btn btn-dark"><%= link_to 'Back', articles_path %><br/></button>
+<button class="btn btn-danger"><%= link_to 'Edit', edit_article_path(@article) %></button>
 </div>
